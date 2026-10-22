@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsene Barber | Más que un corte, una declaración de estilo</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#hero" class="brand-logo">
+          <img src="assets/img/logo.png" alt="Arsène Barber">
+          ARSENE <span class="gold-text">BARBER</span>
+        </a>
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#equipo">Barberos</a></li>
+          <li><a href="#agendar">Agendar</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#equipo">Barberos</a></li>
+      <li><a href="#agendar">Agendar</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" style="background-image: url('assets/img/hero-bg.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="container center-align hero-content">
+        <div class="logo-badge">
+          <img src="assets/img/logo.png" alt="Arsène Barber">
+        </div>
+        <p class="eyebrow">Barbería de caballeros · Bogotá</p>
+        <h1 class="gold-text">Más que un corte,<br>una declaración de estilo</h1>
+        <p class="subtitle">
+          Minimalismo de lujo, precisión de navaja y un ritual completo
+          pensado para el hombre que no deja nada al azar.
+        </p>
+        <a href="#agendar" class="btn-large waves-effect waves-light">Agendar Cita</a>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-subtitle">Catálogo Arsene</p>
+        <hr class="divider-gold">
+        <!-- Cards renderizadas dinámicamente desde CATALOGO_SERVICIOS (js/models/Servicio.js) -->
+        <div id="services-grid" class="row"></div>
+      </div>
+    </section>
+
+    <section id="equipo" class="team-section">
+      <div class="container">
+        <h2 class="section-title">Barbero Estrella</h2>
+        <p class="section-subtitle">La firma de la casa</p>
+        <hr class="divider-gold">
+        <!-- Se completa dinámicamente con CRISTIAN_SUAREZ (js/models/Barbero.js) -->
+        <div id="team-star" class="row"></div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="container">
+        <div class="row" style="margin-bottom:0;">
+          <div class="col s12 m6">
+            <div class="info-card">
+              <i class="material-icons">schedule</i>
+              <h4>Horario</h4>
+              <p>Lunes a sábado<br>10:00 am – 6:30 pm</p>
+            </div>
+          </div>
+          <div class="col s12 m6">
+            <div class="info-card">
+              <i class="material-icons">place</i>
+              <h4>Ubicación</h4>
+              <p>Avenida Calle 147 #7c-75<br>Bogotá, Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="agendar" class="booking-section">
+      <div class="container">
+        <h2 class="section-title">Agenda tu Cita</h2>
+        <p class="section-subtitle">Reserva tu turno en menos de un minuto</p>
+        <hr class="divider-gold">
+
+        <div class="row">
+          <div class="col s12 m8 offset-m2">
+            <form class="booking-card" id="booking-form" novalidate>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <i class="material-icons prefix">person</i>
+                  <input id="nombre" type="text" required>
+                  <label for="nombre">Nombre completo</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="telefono" type="tel" required>
+                  <label for="telefono">Teléfono</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" required>
+                  <label for="email">Correo electrónico</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <select id="servicio-select" required>
+                    <option value="" disabled selected>Elige un servicio</option>
+                  </select>
+                  <label>Servicio</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <select id="barbero-select" required>
+                    <option value="" disabled selected>Elige un barbero</option>
+                  </select>
+                  <label>Barbero</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">event</i>
+                  <input id="fecha" type="text" class="datepicker" required>
+                  <label for="fecha">Fecha preferida</label>
+                </div>
+              </div>
+
+              <div class="row" style="margin-bottom: 0;">
+                <div class="col s12">
+                  <button class="btn-large waves-effect waves-light" type="submit">
+                    Confirmar Cita
+                    <i class="material-icons right">check_circle</i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <img src="assets/img/logo.png" alt="Arsene Barber" class="footer-logo">
+          <p>Más que un corte, una declaración de estilo.</p>
+        </div>
+        <div class="col l4 offset-l1 s12">
+          <h5>Contacto</h5>
+          <p><i class="material-icons">schedule</i>Lun – Sáb: 10:00 am – 6:30 pm</p>
+          <p><i class="material-icons">place</i>Av. Calle 147 #7c-75, Bogotá</p>
+        </div>
+        <div class="col l3 s12">
+          <h5>Síguenos</h5>
+          <p><i class="material-icons">alternate_email</i>@arsenebarber</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 Arsene Barber · Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-float" href="#" target="_blank" rel="noopener"
+     class="btn-floating btn-large green pulse" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="#ffffff" aria-hidden="true">
+      <path d="M16.04 3C9.1 3 3.46 8.63 3.46 15.56c0 2.44.68 4.72 1.86 6.67L3 29l7.02-2.26a12.5 12.5 0 0 0 6.02 1.53h.01c6.94 0 12.58-5.63 12.58-12.56C28.63 8.63 22.99 3 16.04 3zm0 22.86h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.22-4.17 1.34 1.36-4.06-.25-.42a10.26 10.26 0 0 1-1.58-5.5c0-5.68 4.63-10.3 10.3-10.3 5.66 0 10.28 4.62 10.28 10.3 0 5.68-4.62 10.3-10.29 10.3zm5.64-7.72c-.31-.15-1.82-.9-2.1-1-.28-.1-.49-.15-.7.16-.2.3-.8 1-.98 1.2-.18.2-.36.23-.67.08-.31-.16-1.29-.48-2.46-1.53-.91-.81-1.52-1.82-1.7-2.13-.18-.3-.02-.47.13-.62.14-.14.31-.36.46-.54.15-.18.2-.3.31-.51.1-.2.05-.38-.03-.54-.08-.15-.7-1.7-.96-2.33-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.53s1.09 2.94 1.24 3.14c.15.2 2.15 3.28 5.2 4.6.73.31 1.3.5 1.74.64.73.23 1.4.2 1.92.12.59-.09 1.82-.74 2.08-1.46.26-.71.26-1.32.18-1.45-.07-.13-.28-.2-.59-.36z"/>
+    </svg>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
