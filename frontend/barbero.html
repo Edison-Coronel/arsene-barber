@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda del barbero | Arsene Barber</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="container" style="padding: 40px 0;">
+    <h2 class="section-title">Agenda del barbero</h2>
+    <div class="row">
+      <div class="col s12 m4"><input id="pin" type="password" placeholder="PIN"></div>
+      <div class="col s12 m4"><input id="dia" type="date"></div>
+      <div class="col s12 m4"><button id="ver" class="btn-large">Ver citas</button></div>
+    </div>
+    <table class="striped"><thead><tr><th>Hora</th><th>Cliente</th><th>Teléfono</th><th>Servicios</th></tr></thead><tbody id="filas"></tbody></table>
+    <p class="hint">Almuerzo de 12:00 a 1:00 pm: bloqueado todos los días.</p>
+  </main>
+  <script>
+    const $ = (i) => document.getElementById(i);
+    const esc = (t) => String(t).replace(/[&<>"']/g, (m) => `&#${m.charCodeAt(0)};`);
+    $('dia').value = new Date().toLocaleDateString('en-CA');
+    $('ver').onclick = async () => {
+      const servicios = await (await fetch('/api/servicios')).json();
+      const r = await fetch('/api/admin/citas?fecha=' + $('dia').value, { headers: { 'x-pin': $('pin').value } });
+      const citas = await r.json();
+      if (!r.ok) { $('filas').innerHTML = `<tr><td colspan="4">${esc(citas.error)}</td></tr>`; return; }
+      $('filas').innerHTML = citas.map((c) => `<tr><td>${c.hora}</td><td>${esc(c.nombre)}</td><td>${esc(c.telefono)}</td><td>${c.servicios.map((i) => esc(servicios.find((s) => s.id === i)?.nombre || i)).join(' + ')}</td></tr>`).join('') || '<tr><td colspan="4">No hay citas ese día.</td></tr>';
+    };
+  </script>
+</body>
+</html>

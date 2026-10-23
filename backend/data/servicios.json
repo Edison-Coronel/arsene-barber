@@ -1,0 +1,115 @@
+[
+  {
+    "id": "corte-arsene-vip",
+    "nombre": "Corte Arsene VIP",
+    "precio": 50000,
+    "categoria": "Cortes",
+    "incluye": [
+      "Corte detallado",
+      "Asesoría de imagen",
+      "Masajes",
+      "Mascarilla",
+      "Bebida de cortesía"
+    ],
+    "imagen": "assets/img/services/corte-arsene-vip.jpeg",
+    "destacado": true,
+    "duracion": 60
+  },
+  {
+    "id": "corte-arsene-superior",
+    "nombre": "Corte Arsene Superior",
+    "precio": 40000,
+    "categoria": "Cortes",
+    "incluye": [
+      "Corte detallado",
+      "Mascarilla con fototerapia",
+      "Masaje de hombros"
+    ],
+    "imagen": "assets/img/services/corte-arsene-superior.jpeg",
+    "destacado": false,
+    "duracion": 45
+  },
+  {
+    "id": "corte-arsene-premium",
+    "nombre": "Corte Arsene Premium",
+    "precio": 32000,
+    "categoria": "Cortes",
+    "incluye": [
+      "Corte sencillo",
+      "Shampoo",
+      "Peinado"
+    ],
+    "imagen": "assets/img/services/corte-arsene-premium.jpeg",
+    "destacado": false,
+    "duracion": 40
+  },
+  {
+    "id": "corte-arsene",
+    "nombre": "Corte Arsene",
+    "precio": 28000,
+    "categoria": "Cortes",
+    "incluye": [
+      "Corte de cabello sencillo"
+    ],
+    "imagen": "assets/img/services/corte-arsene.jpeg",
+    "destacado": false,
+    "duracion": 30
+  },
+  {
+    "id": "mascarilla-facial",
+    "nombre": "Mascarilla Facial",
+    "precio": 30000,
+    "categoria": "Facial",
+    "incluye": [
+      "Limpieza facial",
+      "Vapor de ozono",
+      "Fototerapia"
+    ],
+    "imagen": "assets/img/services/mascarilla-facial.jpeg",
+    "destacado": false,
+    "duracion": 30
+  },
+  {
+    "id": "barba-arsene-vip",
+    "nombre": "Barba Arsene VIP",
+    "precio": 22000,
+    "categoria": "Barba",
+    "incluye": [
+      "Arreglo detallado",
+      "Vapor",
+      "Shaver",
+      "Bebida de cortesía"
+    ],
+    "imagen": "assets/img/services/barba-arsene-vip.jpeg",
+    "destacado": true,
+    "duracion": 30
+  },
+  {
+    "id": "barba-arsene-premium",
+    "nombre": "Barba Arsene Premium",
+    "precio": 18000,
+    "categoria": "Barba",
+    "incluye": [
+      "Arreglo de barba",
+      "Vapor",
+      "Rasurado",
+      "Aceites"
+    ],
+    "imagen": "assets/img/services/barba-arsene-premium.jpeg",
+    "destacado": false,
+    "duracion": 25
+  },
+  {
+    "id": "barba-arsene",
+    "nombre": "Barba Arsene",
+    "precio": 14000,
+    "categoria": "Barba",
+    "incluye": [
+      "Arreglo de vello facial",
+      "Rasurado"
+    ],
+    "imagen": "assets/img/services/barba-arsene.jpeg",
+    "destacado": false,
+    "duracion": 20
+  }
+]
