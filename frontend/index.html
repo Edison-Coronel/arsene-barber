@@ -102,58 +102,23 @@
         <div class="row">
           <div class="col s12 m8 offset-m2">
             <form class="booking-card" id="booking-form" novalidate>
+              <h5>1. Elige tus servicios</h5>
+              <div id="servicios-check"></div>
+              <h5>2. Barbero y día</h5>
               <div class="row">
-                <div class="input-field col s12 m6">
-                  <i class="material-icons prefix">person</i>
-                  <input id="nombre" type="text" required>
-                  <label for="nombre">Nombre completo</label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <i class="material-icons prefix">phone</i>
-                  <input id="telefono" type="tel" required>
-                  <label for="telefono">Teléfono</label>
-                </div>
+                <div class="input-field col s12 m6"><select id="barbero-select"></select><label>Barbero</label></div>
+                <div class="input-field col s12 m6"><i class="material-icons prefix">event</i><input id="fecha" type="text" class="datepicker"><label for="fecha">Día</label></div>
               </div>
-
+              <h5>3. Elige la hora</h5>
+              <div id="horas"><p class="hint">Elige servicios y un día para ver las horas libres.</p></div>
+              <h5>4. Tus datos</h5>
               <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">email</i>
-                  <input id="email" type="email" required>
-                  <label for="email">Correo electrónico</label>
-                </div>
+                <div class="input-field col s12 m6"><i class="material-icons prefix">person</i><input id="nombre" type="text"><label for="nombre">Nombre completo</label></div>
+                <div class="input-field col s12 m6"><i class="material-icons prefix">phone</i><input id="telefono" type="tel"><label for="telefono">Teléfono</label></div>
               </div>
-
-              <div class="row">
-                <div class="input-field col s12 m6">
-                  <select id="servicio-select" required>
-                    <option value="" disabled selected>Elige un servicio</option>
-                  </select>
-                  <label>Servicio</label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <select id="barbero-select" required>
-                    <option value="" disabled selected>Elige un barbero</option>
-                  </select>
-                  <label>Barbero</label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">event</i>
-                  <input id="fecha" type="text" class="datepicker" required>
-                  <label for="fecha">Fecha preferida</label>
-                </div>
-              </div>
-
-              <div class="row" style="margin-bottom: 0;">
-                <div class="col s12">
-                  <button class="btn-large waves-effect waves-light" type="submit">
-                    Confirmar Cita
-                    <i class="material-icons right">check_circle</i>
-                  </button>
-                </div>
-              </div>
+              <div class="row"><div class="input-field col s12"><i class="material-icons prefix">email</i><input id="email" type="email"><label for="email">Correo electrónico</label></div></div>
+              <button class="btn-large waves-effect waves-light" type="submit">Confirmar cita<i class="material-icons right">check_circle</i></button>
+              <div id="confirmacion"></div>
             </form>
           </div>
         </div>

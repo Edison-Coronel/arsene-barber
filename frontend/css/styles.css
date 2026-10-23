@@ -378,3 +378,14 @@ footer .material-icons { color: var(--gold); vertical-align: middle; margin-righ
   .booking-card { padding: 34px 22px; }
   section { padding: 56px 0; }
 }
+
+/* Bordes redondeados + selector de horas */
+.service-card, .booking-card, .info-card, .star-card { border-radius: 20px; overflow: hidden; }
+.service-card .card-image img { border-radius: 20px 20px 0 0; }
+.btn, .btn-large { border-radius: 999px; }
+.booking-card h5 { margin: 24px 0 10px; }
+.hora-chip { margin: 4px; padding: 8px 18px; border: 1px solid var(--gold); border-radius: 999px; background: transparent; cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 1rem; }
+.hora-chip:hover, .hora-chip.activa { background: var(--gold); color: var(--black); }
+.hint { color: var(--gray); margin: 6px 0 10px; }
+.confirmada { margin-top: 24px; padding: 20px; border: 1px solid var(--gold); border-radius: 16px; }
+.confirmada .btn { margin: 6px 6px 0 0; }
